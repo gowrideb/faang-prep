@@ -5,7 +5,7 @@ public class Palindrome {
         Palindrome palindrome = new Palindrome();
         int num = 1234421;
         boolean isPalindromeStatus = palindrome.isPalindrome(num);
-        System.err.println("Palindrome Status: "+ isPalindromeStatus);
+        System.err.println("Palindrome Status: " + isPalindromeStatus);
 
     }
 

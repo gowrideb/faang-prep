@@ -1,6 +1,8 @@
 package Leetcode.PrefixSum;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SubArraySumEqualsk {
 
@@ -9,7 +11,9 @@ public class SubArraySumEqualsk {
         int k = 5;
         SubArraySumEqualsk subArraySumEqualsk = new SubArraySumEqualsk();
         System.out.println(subArraySumEqualsk.subarraySum(arr, k));
+        System.out.println(subArraySumEqualsk.pairSum(arr, 5));
     }
+
     public int subarraySum(int[] arr, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
@@ -19,6 +23,17 @@ public class SubArraySumEqualsk {
             prefixSum += num;
             count += map.getOrDefault(prefixSum - k, 0);
             map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
+        }
+        return count;
+    }
+
+    public int pairSum(int[] arr, int k) {
+        Set<Integer> seen = new HashSet<>();
+        int count = 0;
+        for (int num : arr) {
+            if (seen.contains(k - num))
+                count++;
+            seen.add(num);
         }
         return count;
     }

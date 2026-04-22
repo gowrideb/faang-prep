@@ -1,4 +1,4 @@
-package Scaler.class1;
+package Scaler.module1.class1;
 
 public class PrimeNumber {
     public static void main(String[] args) {
@@ -6,6 +6,7 @@ public class PrimeNumber {
         int num = 25;
         boolean isPrimeStatus = primeNumber.isPrime(num);
         System.out.println("Prime Status: " + isPrimeStatus);
+        primeNumber.getPrimeList();
 
     }
 
@@ -23,5 +24,13 @@ public class PrimeNumber {
             }
         }
         return true;
+    }
+
+    void getPrimeList() {
+        for (int i = 0; i <= 100; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + ", ");
+            }
+        }
     }
 }
